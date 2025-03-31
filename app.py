@@ -657,7 +657,9 @@ Previous analysis: {response}
                 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
                 chrome_options.add_experimental_option("useAutomationExtension", False)
 
-                driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+                chrome_options.binary_location = "/usr/bin/chromium-browser"
+                service = Service("/usr/bin/chromedriver")
+                driver = webdriver.Chrome(service=service, options=chrome_options)
                 driver.set_page_load_timeout(10)
                 wait = WebDriverWait(driver, 10)
                 
