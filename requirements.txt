@@ -1,3 +1,9 @@
 streamlit
-google-generativeai
 python-dotenv
+google-generativeai
+PyPDF2
+regex
+plotly
+numpy
+selenium
+webdriver-manager
