@@ -26,6 +26,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager
 
+import os
+print("Chromium exists:", os.path.exists("/usr/bin/chromium-browser"))
+print("Chromedriver exists:", os.path.exists("/usr/lib/chromium-browser/chromedriver"))
+
 st.markdown("""
     <style>
     .main {
