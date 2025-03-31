@@ -26,10 +26,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager
 
-import os
-print("Chromium exists:", os.path.exists("/usr/bin/chromium-browser"))
-print("Chromedriver exists:", os.path.exists("/usr/lib/chromium-browser/chromedriver"))
-
 st.markdown("""
     <style>
     .main {
@@ -661,8 +657,8 @@ Previous analysis: {response}
                 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
                 chrome_options.add_experimental_option("useAutomationExtension", False)
 
-                chrome_options.binary_location = "/usr/bin/chromium"
-                service = Service("/usr/lib/chromium/chromedriver")
+                chrome_options.binary_location = os.environ.get("CHROMIUM_BIN", "/usr/bin/chromium-browser")
+                service = Service(os.environ.get("CHROMEDRIVER_BIN", "/usr/bin/chromedriver"))
                 driver = webdriver.Chrome(service=service, options=chrome_options)
                 driver.set_page_load_timeout(10)
                 
