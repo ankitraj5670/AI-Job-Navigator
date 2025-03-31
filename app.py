@@ -661,12 +661,6 @@ Previous analysis: {response}
                 service = Service("/usr/lib/chromium/chromedriver")
                 driver = webdriver.Chrome(service=service, options=chrome_options)
                 driver.set_page_load_timeout(10)
-
-                import os
-                print("Chromium binary exists at /usr/bin/chromium:", os.path.exists("/usr/bin/chromium"))
-                print("Chromium binary exists at /usr/bin/chromium-browser:", os.path.exists("/usr/bin/chromium-browser"))
-                print("Chromedriver exists at /usr/lib/chromium/chromedriver:", os.path.exists("/usr/lib/chromium/chromedriver"))
-                print("Chromedriver exists at /usr/bin/chromedriver:", os.path.exists("/usr/bin/chromedriver"))
                 
                 wait = WebDriverWait(driver, 10)
                 
