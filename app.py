@@ -658,7 +658,7 @@ Previous analysis: {response}
                 chrome_options.add_experimental_option("useAutomationExtension", False)
 
                 chrome_options.binary_location = "/usr/bin/chromium"
-                service = Service("/usr/lib/chromium-browser/chromedriver")
+                service = Service("/usr/lib/chromium/chromedriver")
                 driver = webdriver.Chrome(service=service, options=chrome_options)
                 driver.set_page_load_timeout(10)
                 wait = WebDriverWait(driver, 10)
